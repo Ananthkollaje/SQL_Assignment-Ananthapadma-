@@ -1,0 +1,50 @@
+package MyOwnAutoShopProject;
+
+public class MyOwnAutoShop {
+	int speed;
+	double regularPrice;
+	String color;
+	int length;
+	MyOwnAutoShop(int speed,double regularPrice,String color,int length)
+	{
+		super();
+	}
+	MyOwnAutoShop(int speed,double regularPrice,String color, int year, int manfacdisc)
+	{
+		super();
+	}
+	MyOwnAutoShop(int speed,double regularPrice,String color)
+	{
+		super();
+	}
+	
+	public void display() {
+		System.out.println(speed);
+		System.out.println(regularPrice);
+		System.out.println(color);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Car c = new Car (100, 500000.0, "Red");
+		c.display();
+		System.out.println();
+		
+		Sedan s = new Sedan(120, 2000000.0, "Black",19);
+		s.display();
+		System.out.println();
+		
+		Ford f1 = new Ford (160,4500000.0,"Blue",2008, 500);
+		f1.display();
+		System.out.println();
+		
+		Ford f2 = new Ford (140,4000000.0,"velvet",2009, 1000);
+		f2.display();
+		System.out.println();
+		
+		System.out.println("Sedan Price "+ s.getSalePrice()+"\n");
+		System.out.println("Ford1 Price "+ f1.getSalePrice()+"\n");
+		System.out.println("Ford2 Price "+ f2.getSalePrice()+"\n");
+		System.out.println("Car Price "+ c.getSalePrice()+"\n");
+	}
+}

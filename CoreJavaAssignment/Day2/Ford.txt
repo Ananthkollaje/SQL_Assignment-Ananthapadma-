@@ -1,0 +1,30 @@
+package MyOwnAutoShopProject;
+
+public class Ford extends Car {
+	int year;
+	int manufactureDiscount;
+	Ford(int speed,double regularPrice,String color,int year,int manDisc)
+	{
+		super(speed,regularPrice,color);
+		this.year=year;
+		this.manufactureDiscount=manDisc;
+	}
+	
+	public double getSalePrice()
+	{
+		return super.getSalePrice()-manufactureDiscount;
+	}
+	
+	public void display() {
+		System.out.println(speed);
+		System.out.println(regularPrice);
+		System.out.println(color);
+	}
+	
+	public static void main(String args[])
+	{
+		Ford f=new Ford(150,1900000,"dark blue",2000,50000);
+		f.display();
+		System.out.println(f.getSalePrice());
+	}
+}

@@ -1,0 +1,36 @@
+package MyOwnAutoShopProject;
+
+public class Truck extends Car {
+	int weight;
+	
+	Truck(int speed,double regularPrice,String color,int weight)
+	{
+		super(speed,regularPrice,color);
+		this.weight=weight;
+	}
+	
+	public double getSalePrice()
+	{
+		if(weight>2000)
+		{
+			return super.getSalePrice()-(0.1*super.getSalePrice());
+		}
+		else
+		{
+			return super.getSalePrice()-(0.2*super.getSalePrice());
+		}
+	}
+	
+	public void display() {
+		System.out.println(speed);
+		System.out.println(regularPrice);
+		System.out.println(color);
+	}
+	
+	public static void main(String args [])
+	{
+		Truck t=new Truck(80,2000000,"Red",2500);
+		t.display();
+		System.out.println(t.getSalePrice());
+	}
+}
